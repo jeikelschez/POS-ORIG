@@ -55,7 +55,7 @@
 
         ?>
 
-           <button class="btn btn-success" style="margin-top:5px">Descargar reporte en Excel</button>
+           <button class="btn btn-success" style="margin-top:5px"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Descargar reporte</button>
 
           </a>
 

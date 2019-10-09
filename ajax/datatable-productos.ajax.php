@@ -59,6 +59,10 @@ class TablaProductos{
 
   			}
 
+        $precio_compra = "<span class='hover' val='".$productos[$i]["precio_compra"]."'>".$productos[$i]["precio_compra"]."</span>";
+
+        $precio_venta = "<span class='hover' val='".$productos[$i]["precio_venta"]."'>".$productos[$i]["precio_venta"]."</span>";
+
         /*=============================================
  	 		   TRAEMOS LAS ACCIONES
   			=============================================*/
@@ -72,8 +76,8 @@ class TablaProductos{
           "'.$productos[$i]["descripcion"].'",
           "'.$categorias["categoria"].'",
           "'.$stock.'",
-          "'.$productos[$i]["precio_compra"].'",
-          "'.$productos[$i]["precio_venta"].'",
+          "'.$precio_compra.'",
+          "'.$precio_venta.'",
           "'.$productos[$i]["fecha"].'",
           "'.$botones.'"
 			    ],';

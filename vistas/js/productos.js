@@ -296,28 +296,6 @@ $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
 
 $(document).ready(function(){
 
-  $('.hover').tooltip({
-    title: fetchData,
-    html: true,
-    placement: 'right'
-  });
-
-  function fetchData()
-  {
-   var fetch_data = '';
-   var val = $(this).attr("val");
-
-   var BSf = val * 20000;
-   var BTC = val / 8300;
-   var ETH = val / 1500;
-   var PTR = val / 8300;
-
-   fetch_data = '<p><label>BSf: '+ BSf + '</label></p>'+
-                '<p><label>BTC: '+ BTC.toFixed(6) + '</label></p>'+
-                '<p><label>ETH: '+ ETH.toFixed(6) + '</label></p>'+
-                '<p><label>PTR: '+ PTR.toFixed(6) + '</label></p>';
-
-   return fetch_data;
-  }
+  $('.hover').tooltip({title: "<h1><strong>HTML</strong> inside <code>the</code> <em>tooltip</em></h1>", html: true, placement: "bottom"}); 
 
 });

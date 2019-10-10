@@ -81,7 +81,7 @@ class TablaProductos{
                      'ETH: ' . $VETH . '\r\n' .
                      'PTR: ' . $VPTR;
 
-        $precio_venta = "<span data-toggle='tooltip' data-placement='top' title='".$venta_tt."'>".$productos[$i]["precio_venta"]."</span>";
+        $precio_venta = "<span class='hover'>".$productos[$i]["precio_venta"]."</span>";
 
         /*=============================================
  	 		   TRAEMOS LAS ACCIONES

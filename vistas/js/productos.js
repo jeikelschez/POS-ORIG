@@ -296,6 +296,8 @@ $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
 
 $(document).ready(function(){
 
+  $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+
   $('.hover').tooltip({title: "<h1><strong>HTML</strong> inside <code>the</code> <em>tooltip</em></h1>", html: true, placement: "bottom"}); 
 
 });

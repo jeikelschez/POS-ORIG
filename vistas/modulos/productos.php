@@ -153,7 +153,7 @@
 
                 <span class="input-group-addon"><i class="fa fa-product-hunt"></i></span>
 
-                <input type="text" class="form-control input-lg" name="nuevaDescripcion" placeholder="Ingresar descripción" required>
+                <input type="text" class="form-control input-lg" id="nuevaDescripcion" name="nuevaDescripcion" placeholder="Ingresar descripción" required>
 
               </div>
 

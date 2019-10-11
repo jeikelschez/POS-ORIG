@@ -67,8 +67,25 @@ class AjaxProductos{
     }
 
   }
-}
 
+  /*=============================================
+  VALIDAR NO REPETIR PRODUCTOS
+  =============================================*/
+
+  public $validarProducto;
+
+  public function ajaxValidarProducto(){
+
+    $item = "descripcion";
+    $valor = $this->validarProducto;
+
+    $respuesta = ControladorProductos::ctrMostrarProductos($item, $valor);
+
+    echo json_encode($respuesta);
+
+  }
+
+}
 
 /*=============================================
 GENERAR CÓDIGO A PARTIR DE ID CATEGORIA
@@ -115,5 +132,17 @@ if(isset($_POST["nombreProducto"])){
   $traerProductos = new AjaxProductos();
   $traerProductos -> nombreProducto = $_POST["nombreProducto"];
   $traerProductos -> ajaxEditarProducto();
+
+}
+
+/*=============================================
+VALIDAR NO REPETIR PRODUCTOS
+=============================================*/
+
+if(isset( $_POST["validarProducto"])){
+
+  $valProducto = new AjaxProductos();
+  $valProducto -> validarProducto = $_POST["validarProducto"];
+  $valProducto -> ajaxValidarProducto();
 
 }

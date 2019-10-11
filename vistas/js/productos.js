@@ -293,3 +293,39 @@ $(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
 	})
 
 })
+
+/*=============================================
+REVISAR SI EL PRODUCTO YA ESTÁ REGISTRADA - NUEVADESCRIPCION
+=============================================*/
+
+$("#nuevaDescripcion").change(function(){
+
+
+
+  $(".alert").remove();
+
+  var producto = $(this).val();
+
+  var datos = new FormData();
+  datos.append("nombreProducto", producto);
+
+   $.ajax({
+      url:"ajax/productos.ajax.php",
+      method:"POST",
+      data: datos,
+      cache: false,
+      contentType: false,
+      processData: false,
+      dataType: "json",
+      success:function(respuesta){
+
+        if(respuesta){
+
+          $("#nuevaDescripcion").parent().after('<div class="alert alert-warning">Este Producto ya existe en la base de datos</div>');
+          $("#nuevaDescripcion").val("");
+        }
+
+      }
+
+  })
+})

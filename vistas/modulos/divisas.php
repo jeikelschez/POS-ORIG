@@ -22,7 +22,7 @@
           Refrescar Divisas
         </button>
       </div>
-      
+
       <div class="box-body">
 
         <table class="table table-bordered dt-responsive tablas" width="100%">
@@ -32,8 +32,10 @@
             <tr>
               <th style="width:10px">#</th>
               <th>Divisas</th>
-              <th>Formula</th>
+              <th>Descripcion</th>
+              <th>Pais</th>
               <th>Valor</th>
+              <th>Formula</th>
               <th>Fecha</th>
             </tr>
 
@@ -53,8 +55,10 @@
               echo '<tr>
                       <td>'.($key+1).'</td>
                       <td>'.$value["divisa"].'</td>
-                      <td>'.$value["formula"].'</td>
+                      <td>'.$value["descripcion"].'</td>
+                      <td>'.$value["pais"].'</td>
                       <td>'.$value["valor"].'</td>
+                      <td>'.$value["formula"].'</td>
                       <td>'.$value["fecha"].'</td>
                     </tr>';
             }

@@ -112,10 +112,10 @@
 
 			<li>
 
-				<a href="#">
+				<a href="divisas">
 
-					<i class="fa fa-cogs"></i>
-					<span>Configuraciones</span>
+					<i class="fa fa-usd"></i>
+					<span>Divisas</span>
 
 				</a>
 

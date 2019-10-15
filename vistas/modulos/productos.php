@@ -20,10 +20,14 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-
           <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarProducto" >
             Registrar Producto
           </button>
+          <button type="button" class="btn btn-default pull-right btnImprimirStock">
+            <span>
+              <i class="fa fa-download"></i> Descargar Stock
+            </span>
+         </button>
         </div>
 
         <div class="box-body">

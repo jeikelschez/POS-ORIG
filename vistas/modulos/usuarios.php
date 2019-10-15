@@ -22,8 +22,7 @@
         <div class="box-header with-border">
 
           <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarUsuario" >
-
-            Agregar Usuario
+            Registar Usuario
           </button>
         </div>
 
@@ -133,7 +132,7 @@
 
             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-            <h4 class="modal-title">Agregar Usuario</h4>
+            <h4 class="modal-title">Registar Usuario</h4>
 
           </div>
 
@@ -267,7 +266,7 @@
 
             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-            <h4 class="modal-title">Editar usuario</h4>
+            <h4 class="modal-title">Modificar Usuario</h4>
 
           </div>
 

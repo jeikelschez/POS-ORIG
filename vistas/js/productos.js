@@ -300,8 +300,6 @@ REVISAR SI EL PRODUCTO YA ESTÁ REGISTRADA - NUEVADESCRIPCION
 
 $("#nuevaDescripcion").change(function(){
 
-
-
   $(".alert").remove();
 
   var producto = $(this).val();

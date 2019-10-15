@@ -28,9 +28,9 @@
 
         <a href="crear-venta">
 
-          <button class="btn btn-primary">
+          <button class="btn btn-success">
 
-            Agregar venta
+            Registrar Venta
 
           </button>
 

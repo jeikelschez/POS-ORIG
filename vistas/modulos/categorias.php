@@ -21,8 +21,7 @@
       <div class="box">
         <div class="box-header with-border">
           <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarCategoria" >
-
-            Agregar Categoria
+            Registar Categoría
           </button>
         </div>
         <div class="box-body">
@@ -33,7 +32,7 @@
 
               <tr>
                 <th style="width:10px">#</th>
-                <th>Categoria</th>
+                <th>Categoría</th>
                 <th>Acciones</th>
 
               </tr>
@@ -105,7 +104,7 @@
 
             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-            <h4 class="modal-title">Agregar Categoria</h4>
+            <h4 class="modal-title">Registar Categoría</h4>
 
           </div>
 
@@ -125,7 +124,7 @@
 
                   <span  class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                  <input type="text" class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" placeholder="Ingresar Categoría" required>
+                  <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar Categoría" required>
                 </div>
 
               </div>
@@ -179,7 +178,7 @@
 
             <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-            <h4 class="modal-title">Editar categoria</h4>
+            <h4 class="modal-title">Modificar Categoría</h4>
 
           </div>
 
@@ -217,7 +216,7 @@
 
             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Salir</button>
 
-            <button type="submit" class="btn btn-primary">Modificar usuario</button>
+            <button type="submit" class="btn btn-primary">Modificar categoría</button>
 
           </div>
 

@@ -13,7 +13,7 @@ $productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
 
   <div class="box-header with-border">
 
-    <h3 class="box-title">Productos Recientes</h3>
+    <h3 class="box-title">Productos Recientes Agregados</h3>
 
     <div class="box-tools pull-right">
 

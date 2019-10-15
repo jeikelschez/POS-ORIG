@@ -34,11 +34,11 @@
 
           <div class="box-body">
 
-            <table class="table table-bordered table-striped dt-responsive tablaVentas">
+            <table class="table table-bordered table-striped dt-responsive tablaVentas"  width="100%">
 
-               <thead>
+              <thead>
 
-                 <tr>
+                <tr>
                   <th style="width: 10px">#</th>
                   <th>Imagen</th>
                   <th>Código</th>

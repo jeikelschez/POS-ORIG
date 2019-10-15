@@ -18,7 +18,7 @@
     <div class="box">
 
       <div class="box-header with-border">
-        <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarCategoria" >
+        <button class="btn btn-success btnActualizarDivisas">
           Refrescar Divisas
         </button>
       </div>
@@ -76,3 +76,10 @@
   </section>
 
 </div>
+
+<?php
+
+  $actualizarDivisas = new ControladorDivisas();
+  $actualizarDivisas -> ctrActualizarDivisas();
+
+?>

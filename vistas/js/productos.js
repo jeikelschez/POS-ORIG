@@ -334,8 +334,6 @@ IMPRIMIR STOCK
 
 $(".btnImprimirStock").click(function(){
 
-  var codigoVenta = $(this).attr("codigoVenta");
-
   window.open("extensiones/tcpdf/pdf/stock.php", "_blank");
 
 })

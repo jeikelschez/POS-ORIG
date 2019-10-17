@@ -58,30 +58,10 @@ class TablaProductos{
   				$stock = "<button class='btn btn-success'>".$productos[$i]["stock"]."</button>";
 
   			}
-
-        $CBSF = number_format(($productos[$i]["precio_compra"] * 20000), 2);
-        $CBTC = number_format(($productos[$i]["precio_compra"] / 8300), 6);
-        $CETH = number_format(($productos[$i]["precio_compra"] / 1500), 6);
-        $CPTR = number_format(($productos[$i]["precio_compra"] / 3520), 6);
-
-        $compra_tt = 'BSF: ' . $CBSF . '\r\n' .
-                     'BTC: ' . $CBTC . '\r\n' .
-                     'ETH: ' . $CETH . '\r\n' .
-                     'PTR: ' . $CPTR;
-
-        $precio_compra = "<span data-toggle='tooltip' data-placement='top' title='".$compra_tt."'>".$productos[$i]["precio_compra"]."</span>";
-
-        $VBSF = number_format(($productos[$i]["precio_venta"] * 20000), 2);
-        $VBTC = number_format(($productos[$i]["precio_venta"] / 8300), 6);
-        $VETH = number_format(($productos[$i]["precio_venta"] / 1500), 6);
-        $VPTR = number_format(($productos[$i]["precio_venta"] / 3520), 6);
-
-        $venta_tt =  'BSF: ' . $VBSF . '\r\n' .
-                     'BTC: ' . $VBTC . '\r\n' .
-                     'ETH: ' . $VETH . '\r\n' .
-                     'PTR: ' . $VPTR;
-
-        $precio_venta = "<span data-toggle='modal' data-target='#modalPrecioVenta'>".$productos[$i]["precio_venta"]."</span>";
+        
+        $precio_compra = "<span class='conversorPrecio' data-toggle='modal' precio='".$productos[$i]["precio_compra"]."' data-target='#modalPrecio'>".$productos[$i]["precio_compra"]."</span>";
+        
+        $precio_venta = "<span class='conversorPrecio' data-toggle='modal' precio='".$productos[$i]["precio_venta"]."' data-target='#modalPrecio'>".$productos[$i]["precio_venta"]."</span>";
 
         /*=============================================
  	 		   TRAEMOS LAS ACCIONES

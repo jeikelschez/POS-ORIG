@@ -109,13 +109,17 @@
 
                   $respuestaUsuario = ControladorUsuarios::ctrMostrarUsuarios($itemUsuario, $valorUsuario);
 
+                  $neto = "<span class='conversorPrecio' data-toggle='modal' precio='".$value["neto"]."' data-target='#modalPrecio'>".number_format($value["neto"],2)."</span>";
+
+                  $total = "<span class='conversorPrecio' data-toggle='modal' precio='".$value["total"]."' data-target='#modalPrecio'>".number_format($value["total"],2)."</span>";
+
                   echo '<td>'.$respuestaUsuario["nombre"].'</td>
 
                   <td>'.$value["metodo_pago"].'</td>
 
-                  <td>$ '.number_format($value["neto"],2).'</td>
+                  <td>$ '.$neto.'</td>
 
-                  <td>$ '.number_format($value["total"],2).'</td>
+                  <td>$ '.$total.'</td>
 
                   <td>'.$value["fecha"].'</td>
 
@@ -155,5 +159,144 @@
     </div>
 
   </section>
+
+</div>
+
+<!--=====================================
+  MODAL PRECIO 
+  ======================================-->
+
+  <div id="modalPrecio" class="modal fade" role="dialog">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <!--=====================================
+      CABEZA DEL MODAL
+      ======================================-->
+
+      <div class="modal-header" style="background:#3c8dbc; color:white">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        <h4 class="modal-title">Conversor Precio</h4>
+
+      </div>
+
+      <!--=====================================
+      CUERPO DEL MODAL
+      ======================================-->
+
+      <div class="modal-body">
+
+        <div class="box-body">
+
+          <!-- ETIQUETA PARA BTC -->
+
+          <div class="form-group divisa">
+
+            <label>BTC: </label>
+
+            <span id="BTC"></span>
+
+          </div>
+
+          <!-- ETIQUETA PARA BSS -->
+
+          <div class="form-group divisa">
+
+            <label>BSS: </label>
+
+            <span id="BSS"></span>
+
+          </div>
+
+          <!-- ETIQUETA PARA EUR -->
+
+          <div class="form-group divisa">
+
+            <label>EUR: </label>
+
+            <span id="EUR"></span>
+
+          </div>
+
+          <!-- ETIQUETA PARA COP -->
+
+          <div class="form-group divisa">
+
+            <label>COP: </label>
+
+            <span id="COP"></span>
+
+          </div>
+
+          <!-- ETIQUETA PARA CLP -->
+
+          <div class="form-group divisa">
+
+            <label>CLP: </label>
+
+            <span id="CLP"></span>
+          </div>
+
+          <!-- ETIQUETA PARA UYU -->
+
+          <div class="form-group divisa">
+
+            <label>UYU: </label>
+
+            <span id="UYU"></span>
+
+          </div>
+
+          <!-- ETIQUETA PARA BRL -->
+
+          <div class="form-group divisa">
+
+            <label>BRL: </label>
+
+            <span id="BRL"></span>
+
+          </div>
+
+          <!-- ETIQUETA PARA PEN -->
+
+          <div class="form-group divisa">
+
+            <label>PEN: </label>
+
+            <span id="PEN"></span>
+
+          </div>
+
+          <!-- ETIQUETA PARA ARS -->
+
+          <div class="form-group divisa">
+
+            <label>ARS: </label>
+
+            <span id="ARS"></span>
+
+          </div>
+
+        </div>
+
+      </div>         
+
+      <!--=====================================
+      PIE DEL MODAL
+      ======================================-->
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Salir</button>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </div>

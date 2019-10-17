@@ -853,3 +853,76 @@ $(".daterangepicker.opensleft .ranges li").on("click", function(){
   }
 
 })
+
+/*=============================================
+CONVERSOR PRECIOS
+=============================================*/
+$(".tablas tbody").on("click", ".conversorPrecio", function(){
+
+  $(".alert").remove();
+
+  var precio = $(this).attr("precio");
+
+   $.ajax({
+      url:"ajax/divisas.ajax.php",
+      method:"POST",
+      cache: false,
+      contentType: false,
+      processData: false,
+      dataType: "json",
+      success:function(respuesta){
+
+        if(respuesta){
+          respuesta.forEach(funcionForEach);
+
+          function funcionForEach(item, index){
+
+            if(item.divisa=='BTC') {
+              valor = precio / item.valor;
+              conversion = valor.toLocaleString(undefined, {minimumFractionDigits: 8, maximumFractionDigits: 8});
+            }else {
+              valor = precio * item.valor
+              conversion = valor.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            }
+
+            switch (item.divisa) {
+              case 'BTC':                
+                $("#BTC").text(conversion);
+                break;
+              case 'BSS':
+                $("#BSS").text(conversion);
+                break;
+              case 'EUR':
+                $("#EUR").text(conversion);
+                break;
+              case 'COP':
+                $("#COP").text(conversion);
+                break;
+              case 'CLP':
+                $("#CLP").text(conversion);
+                break;
+              case 'UYU':
+                $("#UYU").text(conversion);
+                break;
+              case 'BRL':
+                $("#BRL").text(conversion);
+                break;
+              case 'PEN':
+                $("#PEN").text(conversion);
+                break;
+              case 'ARS':
+                $("#ARS").text(conversion);
+                break;              
+              default:
+                console.log('Moneda no existente');
+            }
+
+          } 
+
+        }
+
+      }
+
+  })
+
+})

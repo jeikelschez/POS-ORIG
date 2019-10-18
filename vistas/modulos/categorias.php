@@ -124,7 +124,7 @@
 
                   <span  class="input-group-addon"><i class="fa fa-th"></i></span>
 
-                  <input type="text" class="form-control input-lg" name="nuevaCategoria" placeholder="Ingresar Categoría" required>
+                  <input type="text" class="form-control input-lg" id="nuevaCategoria" name="nuevaCategoria" placeholder="Ingresar Categoría" required>
                 </div>
 
               </div>

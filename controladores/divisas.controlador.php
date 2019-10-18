@@ -27,7 +27,7 @@ class ControladorDivisas{
 			$data = json_decode( file_get_contents('https://api.yadio.io/json'), true );
 
 			$BTC = $data['BTC']['price'];
-			$BSF = $data['USD']['rate'];			
+			$BSS = $data['USD']['rate'];			
 			$EUR = $data['USD']['EUR'];
 			$COP = $data['USD']['COP'];
 			$CLP = $data['USD']['CLP'];
@@ -39,7 +39,7 @@ class ControladorDivisas{
 			$tabla = "divisas";
 
 			$datos = array("BTC"=>$BTC,
-						   "BSF"=>$BSF,
+						   "BSS"=>$BSS,
 						   "EUR"=>$EUR,
 						   "COP"=>$COP,
 						   "CLP"=>$CLP,

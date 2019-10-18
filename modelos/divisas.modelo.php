@@ -44,7 +44,7 @@ class ModeloDivisas{
 
 		$stmt = Conexion::conectar()->
 	            prepare("UPDATE $tabla SET valor=:BTC WHERE divisa = 'BTC'; 
-	            	     UPDATE $tabla SET valor=:BSF WHERE divisa = 'BSF';
+	            	     UPDATE $tabla SET valor=:BSS WHERE divisa = 'BSS';
 	            	     UPDATE $tabla SET valor=:EUR WHERE divisa = 'EUR';
 	            	     UPDATE $tabla SET valor=:COP WHERE divisa = 'COP';
 	            	     UPDATE $tabla SET valor=:CLP WHERE divisa = 'CLP';
@@ -54,7 +54,7 @@ class ModeloDivisas{
 	            	     UPDATE $tabla SET valor=:ARS WHERE divisa = 'ARS'");
 
 		$stmt -> bindParam(":BTC", $datos["BTC"], PDO::PARAM_STR);
-		$stmt -> bindParam(":BSF", $datos["BSF"], PDO::PARAM_STR);
+		$stmt -> bindParam(":BSS", $datos["BSS"], PDO::PARAM_STR);
 		$stmt -> bindParam(":EUR", $datos["EUR"], PDO::PARAM_STR);
 		$stmt -> bindParam(":COP", $datos["COP"], PDO::PARAM_STR);
 		$stmt -> bindParam(":CLP", $datos["CLP"], PDO::PARAM_STR);

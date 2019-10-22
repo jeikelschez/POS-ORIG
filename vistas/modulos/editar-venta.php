@@ -4,7 +4,7 @@
 
     <h1>
 
-      Editar venta
+    Modificar Venta
 
     </h1>
 

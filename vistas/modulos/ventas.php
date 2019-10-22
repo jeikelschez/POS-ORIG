@@ -6,7 +6,7 @@
 
     <h1>
 
-      Administrar ventas
+      Consultar Ventas
 
     </h1>
 

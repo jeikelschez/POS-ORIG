@@ -4,7 +4,7 @@
 
     <h1>
 
-      Crear venta
+      Registrar Venta
 
     </h1>
 

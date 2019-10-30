@@ -210,7 +210,6 @@
                     <option value="Administrador">Administrador</option>
                     <option value="Especial">Especial</option>
                     <option value="Vendedor">Vendedor</option>
-                    <option value="Auditoría">Auditoría</option>
 
                   </select>
                 </div>
@@ -353,8 +352,6 @@
                     <option value="Especial">Especial</option>
 
                     <option value="Vendedor">Vendedor</option>
-
-                    <option value="Auditoría">Auditoría</option>
 
                   </select>
 

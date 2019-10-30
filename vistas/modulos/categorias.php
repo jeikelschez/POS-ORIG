@@ -20,9 +20,11 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarCategoria" >
-            Registar Categoría
-          </button>
+          <?php if($_SESSION["perfil"] !="Vendedor"){ ?>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarCategoria" >
+              Registar Categoría
+            </button>
+          <?php } ?>
         </div>
         <div class="box-body">
 
@@ -33,7 +35,9 @@
               <tr>
                 <th style="width:10px">#</th>
                 <th>Categoría</th>
-                <th>Acciones</th>
+                <?php if($_SESSION["perfil"] =="Administrador"){ ?>
+                  <th>Acciones</th>
+                <?php } ?>
 
               </tr>
 
@@ -52,17 +56,17 @@
 
                 echo '<tr>
                         <td>'.($key+1).'</td>
-                        <td>'.$value["categoria"].'</td>
-                        <td>
+                        <td>'.$value["categoria"].'</td>';
+
+                if($_SESSION["perfil"] =="Administrador"){ 
+                  echo '<td>
                           <div class="btn-group">
-
                             <button class="btn btn-warning btnEditarCategoria" idCategoria="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarCategoria" ><i class="fa fa-pencil"></i></button>
-
                             <button class="btn btn-danger btnEliminarCategoria" idCategoria="'.$value["id"].'"><i class="fa fa-times"></i></button>
-
                           </div>
-                        </td>
-                      </tr>';
+                        </td>';
+                }
+                echo '</tr>';
               }
 
                ?>

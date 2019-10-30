@@ -34,7 +34,7 @@
 
         <div class="box-body">
 
-          <table class="table table-bordered dt-responsive tablaProductos" width="100%">
+          <table class="table table-bordered dt-responsive tablas" width="100%">
 
             <thead>
 
@@ -57,7 +57,71 @@
             </thead>
 
             <tbody>
+            <?php
 
+            $item = null;
+            $valor = null;
+            $orden = "id";
+            
+            $productos = ControladorProductos::ctrMostrarProductos($item, $valor,$orden);
+
+            foreach ($productos as $key => $value) {
+
+              /*=============================================
+               TRAEMOS LA IMAGEN
+              =============================================*/
+              $imagen = "<img src='".$value["imagen"]."' width='40px'>";
+
+              /*=============================================
+               TRAEMOS LA CATEGORÍA
+              =============================================*/
+              $item = "id";
+              $valor = $value["id_categoria"];
+              $categorias = ControladorCategorias::ctrMostrarCategorias($item, $valor);
+
+              /*=============================================
+               STOCK
+              =============================================*/
+
+              if($value["stock"] <= 10){
+                $stock = "<button class='btn btn-danger'>".$value["stock"]."</button>";
+              }else if($value["stock"] > 11 && $value["stock"] <= 15){
+                $stock = "<button class='btn btn-warning'>".$value["stock"]."</button>";
+              }else{
+                $stock = "<button class='btn btn-success'>".$value["stock"]."</button>";
+              }
+              
+              $precio_compra = "<span class='conversorPrecio' data-toggle='modal' precio='".$value["precio_compra"]."' data-target='#modalPrecio'>".$value["precio_compra"]."</span>";
+              
+              $precio_venta = "<span class='conversorPrecio' data-toggle='modal' precio='".$value["precio_venta"]."' data-target='#modalPrecio'>".$value["precio_venta"]."</span>";
+
+              /*=============================================
+               TRAEMOS LAS ACCIONES
+              =============================================*/
+
+              $botones =  "<div class='btn-group'><button class='btn btn-warning btnEditarProducto' idProducto='".$value["id"]."' data-toggle='modal' data-target='#modalEditarProducto'><i class='fa fa-pencil'></i></button><button class='btn btn-danger btnEliminarProducto' idProducto='".$value["id"]."' codigo='".$value["codigo"]."' imagen='".$value["imagen"]."'><i class='fa fa-times'></i></button></div>";
+
+              echo '<tr>
+
+                  <td>'.($key+1).'</td>
+                  <td>'.$imagen.'</td>
+                  <td>'.$value["codigo"].'</td>
+                  <td>'.$value["descripcion"].'</td>
+                  <td>'.$categorias["categoria"].'</td>
+                  <td>'.$stock.'</td>
+                  <td>'.$precio_compra.'</td>
+                  <td>'.$precio_venta.'</td>
+                  <td>'.$value["fecha"].'</td>';
+
+              if($_SESSION["perfil"] =="Administrador"){
+                echo '<td>'.$botones.'</td>';
+              }  
+
+              echo '</tr>';              
+
+            }
+
+            ?>
             </tbody>
 
           </table>

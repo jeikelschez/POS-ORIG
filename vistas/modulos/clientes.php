@@ -50,7 +50,9 @@
            <th>Total compras</th>
            <th>Última compra</th>
            <th>Ingreso al sistema</th>
-           <th>Acciones</th>
+           <?php if($_SESSION["perfil"] !="Vendedor"){ ?>
+            <th>Acciones</th>
+          <?php } ?>  
 
          </tr>
 
@@ -96,21 +98,26 @@
 
                     }
 
-                  echo  '<td>'.$value["fecha"].'</td>
+                  echo  '<td>'.$value["fecha"].'</td>';
 
-                    <td>
+                  if($_SESSION["perfil"] !="Vendedor"){
 
-                      <div class="btn-group">
+                    echo '<td>
 
-                        <button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+                      <div class="btn-group">';
 
-                        <button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>
+                  
+                    echo '<button class="btn btn-warning btnEditarCliente" data-toggle="modal" data-target="#modalEditarCliente" idCliente="'.$value["id"].'"><i class="fa fa-pencil"></i></button>';
+                    
 
-                      </div>
+                    if($_SESSION["perfil"] =="Administrador"){
+                      echo '<button class="btn btn-danger btnEliminarCliente" idCliente="'.$value["id"].'"><i class="fa fa-times"></i></button>';
+                    }
 
-                    </td>
+                    echo '</div></td>';
+                  }
 
-                  </tr>';
+                  echo '</tr>';
 
             }
 

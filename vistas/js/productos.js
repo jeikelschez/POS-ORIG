@@ -199,7 +199,7 @@ $(".nuevaImagen").change(function(){
 EDITAR PRODUCTO
 =============================================*/
 
-$(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
+$(".tablas").on("click", ".btnEditarProducto", function(){
 
 	var idProducto = $(this).attr("idProducto");
 
@@ -266,7 +266,7 @@ $(".tablaProductos tbody").on("click", "button.btnEditarProducto", function(){
 ELIMINAR PRODUCTO
 =============================================*/
 
-$(".tablaProductos tbody").on("click", "button.btnEliminarProducto", function(){
+$(".tablas").on("click", ".btnEliminarProducto", function(){
 
 	var idProducto = $(this).attr("idProducto");
 	var codigo = $(this).attr("codigo");

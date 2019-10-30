@@ -20,14 +20,16 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarProducto" >
-            Registrar Producto
-          </button>
+          <?php if($_SESSION["perfil"] !="Vendedor"){ ?>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarProducto" >
+              Registrar Producto
+            </button>
+          <?php } ?>  
           <button type="button" class="btn btn-default pull-right btnImprimirStock">
             <span>
               <i class="fa fa-download"></i> Descargar Stock
             </span>
-         </button>
+          </button>
         </div>
 
         <div class="box-body">
@@ -46,7 +48,9 @@
                 <th>Precio de compra</th>
                 <th>Precio de venta</th>
                 <th>Agregado</th>
-                <th>Acciones</th>
+                <?php if($_SESSION["perfil"] =="Administrador"){ ?>
+                  <th>Acciones</th>
+                <?php } ?>  
 
               </tr>
 

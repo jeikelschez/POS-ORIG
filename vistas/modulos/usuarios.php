@@ -21,9 +21,11 @@
       <div class="box">
         <div class="box-header with-border">
 
-          <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarUsuario" >
-            Registar Usuario
-          </button>
+          <?php if($_SESSION["perfil"] =="Administrador"){ ?>
+            <button class="btn btn-success" data-toggle="modal" data-target="#modalAgregarUsuario" >
+              Registar Usuario
+            </button>
+          <?php } ?>
         </div>
 
         <div class="box-body">
@@ -40,7 +42,9 @@
                 <th>Perfil</th>
                 <th>Estado</th>
                 <th>Ultimo Login</th>
-                <th>Acciones</th>
+                <?php if($_SESSION["perfil"] =="Administrador"){ ?>
+                  <th>Acciones</th>
+                <?php } ?>
 
               </tr>
 
@@ -65,11 +69,18 @@
                   <td>'.$value["perfil"].'</td>';
                   if($value["estado"] != 0){
 
-                    echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
-
+                    if($_SESSION["perfil"] =="Administrador") {
+                      echo '<td><button class="btn btn-success btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
+                    }else {
+                      echo '<td><button class="btn btn-success btn-xs" idUsuario="'.$value["id"].'" estadoUsuario="0">Activado</button></td>';
+                    }
                   }else{
 
-                    echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+                    if($_SESSION["perfil"] =="Administrador") {
+                      echo '<td><button class="btn btn-danger btn-xs btnActivar" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+                    }else {
+                      echo '<td><button class="btn btn-danger btn-xs" idUsuario="'.$value["id"].'" estadoUsuario="1">Desactivado</button></td>';
+                    }  
 
                   }
 
@@ -79,19 +90,21 @@
                     echo '<td>'.$value["ultimo_login"].'</td>';
                   }
 
-                  echo '<td>
+                  if($_SESSION["perfil"] =="Administrador") {
+                    echo '<td>
 
-                    <div class="btn-group">
+                      <div class="btn-group">
 
-                      <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-warning btnEditarUsuario" idUsuario="'.$value["id"].'" data-toggle="modal" data-target="#modalEditarUsuario"><i class="fa fa-pencil"></i></button>
 
-                      <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
+                        <button class="btn btn-danger btnEliminarUsuario" idUsuario="'.$value["id"].'" fotoUsuario="'.$value["foto"].'" usuario="'.$value["usuario"].'"><i class="fa fa-times"></i></button>
 
-                    </div>
+                      </div>
 
-                  </td>
+                    </td>';
+                }
 
-                </tr>';
+                echo '</tr>';
               }
 
               ?>
@@ -112,8 +125,8 @@
   <!-- /.content-wrapper -->
 
   <!--=====================================
-	MODAL AGREGAR USUARIO
-	======================================-->
+  MODAL AGREGAR USUARIO
+  ======================================-->
 
   <!-- Modal -->
   <div id="modalAgregarUsuario" class="modal fade" role="dialog">
@@ -125,8 +138,8 @@
         <form role="form" method="post" enctype="multipart/form-data">
 
           <!--=====================================
-        	CABEZA DEL MODAL
-        	======================================-->
+          CABEZA DEL MODAL
+          ======================================-->
 
           <div class="modal-header" style="background:#00a65a; color:white;">
 
@@ -137,8 +150,8 @@
           </div>
 
           <!--=====================================
-        	CUERPO DEL MODAL
-        	======================================-->
+          CUERPO DEL MODAL
+          ======================================-->
 
           <div class="modal-body">
 
@@ -197,6 +210,7 @@
                     <option value="Administrador">Administrador</option>
                     <option value="Especial">Especial</option>
                     <option value="Vendedor">Vendedor</option>
+                    <option value="Auditoría">Auditoría</option>
 
                   </select>
                 </div>
@@ -222,8 +236,8 @@
           </div>
 
           <!--=====================================
-        	PIE DEL MODAL
-        	======================================-->
+          PIE DEL MODAL
+          ======================================-->
 
           <div class="modal-footer">
 
@@ -339,6 +353,8 @@
                     <option value="Especial">Especial</option>
 
                     <option value="Vendedor">Vendedor</option>
+
+                    <option value="Auditoría">Auditoría</option>
 
                   </select>
 

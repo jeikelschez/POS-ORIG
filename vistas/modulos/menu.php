@@ -121,6 +121,21 @@
 
 			</li>
 
+			<?php if($_SESSION["perfil"] =="Administrador"){ ?>
+
+			<li>
+
+				<a href="auditoria">
+
+					<i class="fa fa-key"></i>
+					<span>Auditoría</span>
+
+				</a>
+
+			</li>
+			
+			<?php } ?>
+
 		</ul>
 
 	 </section>

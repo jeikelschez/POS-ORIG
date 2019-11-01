@@ -20,6 +20,8 @@ class ControladorUsuarios{
     				$item = "usuario";
     				$valor = $_POST["ingUsuario"];
 
+            $_SESSION["preusuario"] = $valor;
+
     				$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 
     				if($respuesta["usuario"] == $_POST["ingUsuario"] && $respuesta["password"] == $encriptar){

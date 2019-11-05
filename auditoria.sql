@@ -11,143 +11,157 @@ CREATE TABLE `auditoria` (
 -- -----------------------------------------------------
 -- Triggers Tabla usuarios
 -- -----------------------------------------------------
+DELIMITER //
 CREATE TRIGGER usuarios_AU AFTER UPDATE ON usuarios
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('usuarios',OLD.id,'Update',CURRENT_USER(),NOW());
+     VALUES('usuarios',OLD.id,'Update',USER(),NOW());
 END
-
+DELIMITER //
 CREATE TRIGGER usuarios_AI AFTER INSERT ON usuarios
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('usuarios',NEW.id,'Insert',CURRENT_USER(),NOW());
-END
-
+     VALUES('usuarios',NEW.id,'Insert', USER(),NOW());
+END //
+DELIMITER //
 CREATE TRIGGER usuarios_AD AFTER DELETE ON usuarios
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('usuarios',OLD.id,'Delete',CURRENT_USER(),NOW());
-END
+     VALUES('usuarios',OLD.id,'Delete', USER(),NOW());
+END //
 
 -- -----------------------------------------------------
 -- Triggers Tabla categorias
 -- -----------------------------------------------------
+DELIMITER //
 CREATE TRIGGER categorias_AU AFTER UPDATE ON categorias
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('categorias',OLD.id,'Update',CURRENT_USER(),NOW());
-END
+     VALUES('categorias',OLD.id,'Update', USER(),NOW());
+END //
 
+DELIMITER //
 CREATE TRIGGER categorias_AI AFTER INSERT ON categorias
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('categorias',NEW.id,'Insert',CURRENT_USER(),NOW());
-END
+     VALUES('categorias',NEW.id,'Insert', USER(),NOW());
+END //
 
+DELIMITER //
 CREATE TRIGGER categorias_AD AFTER DELETE ON categorias
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('categorias',OLD.id,'Delete',CURRENT_USER(),NOW());
-END
+     VALUES('categorias',OLD.id,'Delete', USER(),NOW());
+END //
 
 -- -----------------------------------------------------
 -- Triggers Tabla clientes
 -- -----------------------------------------------------
+
+DELIMITER //
 CREATE TRIGGER clientes_AU AFTER UPDATE ON clientes
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('clientes',OLD.id,'Update',CURRENT_USER(),NOW());
-END
+     VALUES('clientes',OLD.id,'Update', USER(),NOW());
+END //
+
+DELIMITER //
 
 CREATE TRIGGER clientes_AI AFTER INSERT ON clientes
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('clientes',NEW.id,'Insert',CURRENT_USER(),NOW());
-END
+     VALUES('clientes',NEW.id,'Insert', USER(),NOW());
+END //
 
+DELIMITER //
 CREATE TRIGGER clientes_AD AFTER DELETE ON clientes
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('clientes',OLD.id,'Delete',CURRENT_USER(),NOW());
-END
+     VALUES('clientes',OLD.id,'Delete', USER(),NOW());
+END //
 
 -- -----------------------------------------------------
 -- Triggers Tabla divisas
 -- -----------------------------------------------------
+DELIMITER //
 CREATE TRIGGER divisas_AU AFTER UPDATE ON divisas
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('divisas',OLD.id,'Update',CURRENT_USER(),NOW());
-END
+     VALUES('divisas',OLD.id,'Update', USER(),NOW());
+END //
 
+DELIMITER //
 CREATE TRIGGER divisas_AI AFTER INSERT ON divisas
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('divisas',NEW.id,'Insert',CURRENT_USER(),NOW());
-END
+     VALUES('divisas',NEW.id,'Insert', USER(),NOW());
+END //
 
+DELIMITER //
 CREATE TRIGGER divisas_AD AFTER DELETE ON divisas
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('divisas',OLD.id,'Delete',CURRENT_USER(),NOW());
-END
+     VALUES('divisas',OLD.id,'Delete',USER(),NOW());
+END //
 
 -- -----------------------------------------------------
 -- Triggers Tabla productos
 -- -----------------------------------------------------
+DELIMITER //
 CREATE TRIGGER productos_AU AFTER UPDATE ON productos
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('productos',OLD.id,'Update',CURRENT_USER(),NOW());
-END
-
+     VALUES('productos',OLD.id,'Update', USER(),NOW());
+END //
+DELIMITER //
 CREATE TRIGGER productos_AI AFTER INSERT ON productos
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('productos',NEW.id,'Insert',CURRENT_USER(),NOW());
-END
-
+     VALUES('productos',NEW.id,'Insert', USER(),NOW());
+END //
+DELIMITER //
 CREATE TRIGGER productos_AD AFTER DELETE ON productos
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('productos',OLD.id,'Delete',CURRENT_USER(),NOW());
-END
+     VALUES('productos',OLD.id,'Delete', USER(),NOW());
+END //
 
 -- -----------------------------------------------------
 -- Triggers Tabla ventas
 -- -----------------------------------------------------
+DELIMITER //
 CREATE TRIGGER ventas_AU AFTER UPDATE ON ventas
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('ventas',OLD.id,'Update',CURRENT_USER(),NOW());
-END
-
+     VALUES('ventas',OLD.id,'Update', USER(),NOW());
+END //
+DELIMITER //
 CREATE TRIGGER ventas_AI AFTER INSERT ON ventas
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('ventas',NEW.id,'Insert',CURRENT_USER(),NOW());
-END
-
+     VALUES('ventas',NEW.id,'Insert', USER(),NOW());
+END //
+DELIMITER //
 CREATE TRIGGER ventas_AD AFTER DELETE ON ventas
    FOR EACH ROW
 BEGIN
      INSERT INTO auditoria(tabla,idtabla,tipo,usuario,fecha) 
-     VALUES('ventas',OLD.id,'Delete',CURRENT_USER(),NOW());
-END
+     VALUES('ventas',OLD.id,'Delete', USER(),NOW());
+END //

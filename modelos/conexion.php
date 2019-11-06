@@ -5,7 +5,10 @@ class Conexion{
 	static public function conectar(){
 
     $user = $_SESSION["preusuario"];
-    //$user = 'root';
+    
+    if(!$user){
+      $user = 'jrollin';
+    }
 
 		$link = new PDO("mysql:host=localhost;dbname=simgedic",
                       $user,

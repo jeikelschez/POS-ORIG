@@ -95,7 +95,7 @@ $bloque1 = <<<EOF
 
 		<tr>
 			
-			<td style="background-color:white; width:500px;">
+			<td style="background-color:white; width:540px;">
 
 				<div style="font-size:16px; font-weight: bold; text-align:center; line-height:30px;">
 					
@@ -112,6 +112,77 @@ $bloque1 = <<<EOF
 EOF;
 
 $pdf->writeHTML($bloque1, false, false, false, false, '');
+
+// ---------------------------------------------------------
+
+$bloque2 = <<<EOF
+
+	<table style="font-size:10px; padding:5px 10px;">
+
+		<tr>                
+            <th style="border: 1px solid #666; color:#333; background-color:white; width:70px; text-align:center">Código</th>
+            <th style="border: 1px solid #666; color:#333; background-color:white; width:280px; text-align:center">Descripción</th>
+            <th style="border: 1px solid #666; color:#333; background-color:white; width:50px; text-align:center">Stock</th>
+            <th style="border: 1px solid #666; color:#333; background-color:white; width:70px; text-align:center">Precio de compra</th>
+            <th style="border: 1px solid #666; color:#333; background-color:white; width:70px; text-align:center">Precio de venta</th>
+        </tr>
+
+	</table>
+
+EOF;
+
+$pdf->writeHTML($bloque2, false, false, false, false, '');
+
+$item = null;
+$valor = null;
+$orden = "descripcion";
+
+$productos = ControladorProductos::ctrMostrarProductos($item, $valor, $orden);
+
+foreach ($productos as $key => $item) {
+
+	$codigo = $item["codigo"];
+	$descripcion = $item["descripcion"];
+	$stock = $item["stock"];
+	$precio_compra = number_format($item["precio_compra"], 2);
+	$precio_venta = number_format($item["precio_venta"], 2);
+
+	$bloque3 = <<<EOF
+
+		<table style="font-size:10px; padding:5px 10px;">			
+
+			<tr>
+				
+				<td style="border: 1px solid #666; color:#333; background-color:white; width:70px; text-align:center">
+					$codigo
+				</td>
+
+				<td style="border: 1px solid #666; color:#333; background-color:white; width:280px; text-align:center">
+					$descripcion
+				</td>
+
+				<td style="border: 1px solid #666; color:#333; background-color:white; width:50px; text-align:center">
+					$stock
+				</td>
+
+				<td style="border: 1px solid #666; color:#333; background-color:white; width:70px; text-align:center">$ 
+					$precio_compra
+				</td>
+
+				<td style="border: 1px solid #666; color:#333; background-color:white; width:70px; text-align:center">$ 
+					$precio_venta
+				</td>
+
+
+			</tr>
+
+		</table>
+
+EOF;
+
+$pdf->writeHTML($bloque3, false, false, false, false, '');
+
+}
 
 // ---------------------------------------------------------
 //SALIDA DEL ARCHIVO 

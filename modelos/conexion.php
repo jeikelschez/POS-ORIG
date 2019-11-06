@@ -7,7 +7,7 @@ class Conexion{
     if($_SESSION["preusuario"]){
       $user = $_SESSION["preusuario"];      
     }else {
-      $user = 'jrollin';
+      $user = 'root';
     }
 
 		$link = new PDO("mysql:host=localhost;dbname=simgedic",

@@ -21,7 +21,6 @@ class ControladorUsuarios{
     				$valor = $_POST["ingUsuario"];
 
             $_SESSION["preusuario"] = $valor;
-            $_SESSION["preusuario"] = 'jeikel';
 
     				$respuesta = ModeloUsuarios::MdlMostrarUsuarios($tabla, $item, $valor);
 

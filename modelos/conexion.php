@@ -3,10 +3,10 @@
 class Conexion{
 
 	static public function conectar(){
-
-    $user = $_SESSION["preusuario"];
     
-    if(!$user){
+    if($_SESSION["preusuario"]){
+      $user = $_SESSION["preusuario"];      
+    }else {
       $user = 'jrollin';
     }
 

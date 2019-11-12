@@ -399,6 +399,7 @@ $(".tablaProductos tbody").on("click", ".conversorPrecio", function(){
                 break;              
               default:
                 console.log('Moneda no existente');
+               
             }
 
           } 
@@ -410,3 +411,4 @@ $(".tablaProductos tbody").on("click", ".conversorPrecio", function(){
   })
 
 })
+ 

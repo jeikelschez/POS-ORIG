@@ -3,6 +3,10 @@
 class Conexion{
 
   static public function conectar(){
+
+    if(!isset($_SESSION)) { 
+        session_start(); 
+    } 
     
     $user = $_SESSION["preusuario"];
 

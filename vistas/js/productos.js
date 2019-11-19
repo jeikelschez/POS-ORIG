@@ -411,10 +411,10 @@ $(".tablaProductos tbody").on("click", ".conversorPrecio", function(){
   })
 
 })
-=============================================
+/*=============================================
 DESHABILITAR CLICK DERECHO / F12 Y CTRL+SHIFT+I
 =============================================*/
-/*$(document).ready(function(){
+$(document).ready(function(){
    
   $(document).bind("contextmenu",function(e){
     return false;

@@ -35,6 +35,11 @@
           <button type="submit" class="btn btn-primary btn-block btn-flat">Ingresar</button>
 
         </div>
+        <div class="col-xs-8" align="right">
+
+          <a class="btn btn-info px-3" href="vistas/img/Contacto.pdf" target="_blank"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+
+        </div>
 
       </div>
 
